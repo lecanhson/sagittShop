@@ -83,3 +83,22 @@ public final StandardOutputStreamLog log = new StandardOutputStreamLog();
 public CompactDisc sgtPeppers() {
 return new SgtPeppers();
 }  : Như vậy là khai báo một bean trong Spring
+
+
+obtained: đạt được
+
+
+
+@Component
+@Qualifier("cold")
+@Qualifier("creamy")
+public class IceCream implements Dessert { ... } 
+
+
+
+@Component
+@Qualifier("cold")
+@Qualifier("fruity")
+public class Popsicle implements Dessert { ... }
+
+: Qualifier dùng để chỉ đích danh 1 định nghĩa của mình khai báo
