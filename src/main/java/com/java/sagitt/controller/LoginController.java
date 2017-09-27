@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.validation.BindingResult;
 
-import com.java.sagitt.DAO.LoginService;
+import com.java.sagitt.DAO.LoginDAO;
 import com.java.sagitt.form.LoginForm;
 
 @Controller
@@ -18,7 +18,7 @@ import com.java.sagitt.form.LoginForm;
 public class LoginController {
 
 	@Autowired
-	public LoginService loginService;
+	public LoginDAO loginService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm(Map model) {

@@ -1,21 +1,23 @@
 package com.java.sagitt.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.java.sagitt.DAO.LoginService;
+import com.java.sagitt.DAO.LoginDAO;
 
-public class LoginServiceImpl implements LoginService {
+@Service("loginService")
+public class LoginServiceImpl implements LoginDAO {
 	
 	@Autowired
-	private LoginService login;
+	private LoginDAO login;
 	
 	
-	public LoginService getLogin() {
+	public LoginDAO getLogin() {
 		return login;
 	}
 
 
-	public void setLogin(LoginService login) {
+	public void setLogin(LoginDAO login) {
 		this.login = login;
 	}
 

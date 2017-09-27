@@ -160,3 +160,6 @@ public BlankDisc(@Value("#{systemProperties['disc.title']}") String title, @Valu
 
 	aspects : vẻ bề ngoài, khía cạnh
 	circumstances : trường hợp 
+
+
+	@SuppressWarnings : tắt cảnh báo lỗi biên dịch của eclipse

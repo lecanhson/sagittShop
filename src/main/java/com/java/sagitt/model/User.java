@@ -18,6 +18,9 @@ import javax.persistence.Transient;
 import javax.persistence.Embeddable;
 
 
+@Entity
+@Table(name="user")
+@SuppressWarnings("serial")
 public class User implements Serializable {
 
 	@Id
