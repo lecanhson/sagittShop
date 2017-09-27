@@ -9,7 +9,7 @@ public class HomeController {
 
 	// @Autowired
 
-	@RequestMapping(value = "/wellcome", method = RequestMethod.GET)
+	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
 	public ModelAndView home() {
 		String message = "Chào mừng, bạn đã đăng nhập thành công";
 		return new ModelAndView("home", "message", message);

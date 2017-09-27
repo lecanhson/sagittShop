@@ -1,6 +1,7 @@
 package com.java.sagitt.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -28,12 +29,18 @@ public class User implements Serializable {
 	@Column(name = "id", length = 11)
 	private Long id;
 
-	@Column(name = "user_name")
-	private String userName;
+	@Column(name = "user")
+	private String user;
 
 	@Column(name = "password")
 	private String password;
+	
+	@Column(name="email")
+	private String email;
 
+	@Column(name="create")
+	private Date create;
+	
 	public Long getId() {
 		return id;
 	}
@@ -42,12 +49,13 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+
+	public String getUser() {
+		return user;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUser(String user) {
+		this.user = user;
 	}
 
 	public String getPassword() {
@@ -57,5 +65,23 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getCreate() {
+		return create;
+	}
+
+	public void setCreate(Date create) {
+		this.create = create;
+	}
+	
+	
 
 }
