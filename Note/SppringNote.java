@@ -163,3 +163,6 @@ public BlankDisc(@Value("#{systemProperties['disc.title']}") String title, @Valu
 
 
 	@SuppressWarnings : tắt cảnh báo lỗi biên dịch của eclipse
+
+
+	@Resource sử dụng cho filed, và setter method. @Qualifier và @Autowired cho constructor hoặc một multi-argument method injection.

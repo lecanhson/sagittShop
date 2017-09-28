@@ -15,7 +15,13 @@ import com.java.sagitt.DAO.LoginDAO;
 @Repository("loginDAO")
 public class LoginDAOImpl implements LoginDAO {
 
-	@Resource(name = "sessionFacory")
+	@Override
+	public boolean checkLogin(String userName, String passWord) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+/*
+	@Resource(name="sessionFacory")
 	protected SessionFactory sessionfactory;
 
 	@Override
@@ -40,6 +46,7 @@ public class LoginDAOImpl implements LoginDAO {
 
 	public void setSessionfactory(SessionFactory sessionfactory) {
 		this.sessionfactory = sessionfactory;
-	}
+	}*/
+	
 
 }
