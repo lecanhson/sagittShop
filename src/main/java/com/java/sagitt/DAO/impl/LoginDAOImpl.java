@@ -7,11 +7,12 @@ import javax.annotation.Resource;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.java.sagitt.DAO.LoginDAO;
 
-@Service("loginService")
+@Repository("loginDAO")
 public class LoginDAOImpl implements LoginDAO {
 
 	@Resource(name = "sessionFacory")
