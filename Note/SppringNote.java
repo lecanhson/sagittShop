@@ -166,3 +166,13 @@ public BlankDisc(@Value("#{systemProperties['disc.title']}") String title, @Valu
 
 
 	@Resource sử dụng cho filed, và setter method. @Qualifier và @Autowired cho constructor hoặc một multi-argument method injection.
+
+
+
+	DispatcherServlet được xem là trái tim của Spring. 
+	Mọi request đến đều phải qua anh này. Khi request đến Dispatcher ko trực tiếp xử lí ma nó sẽ ủy quyền cho controller làm .
+	Controller làm nhiệm vụ gọi service để xử lí business hay gì đó ,xong nó trả về cho thèn Dispatcher 1 model(có thể String, ModelAndView,Model).
+	Dispatcher nhận model từ controller gọi tiếp đén view template để lấy thông tin về kiểu mở roonng cua trang trả về
+	(cái này mình configure trong Spring), tóm lại chỗ này trả về chữ ".html", ".jsp" hay 1 kiểu gì đó . dispatcher kết hợp model trả 
+	về từ controller+ type từ view temp => trang muốn tìm.Vd bạn gõ http://localhost:8080/login, controller trả về login, 
+	configure view template trả về ".html" ==> sẽ hiện trang login.html ra
