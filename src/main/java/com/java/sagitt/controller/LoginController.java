@@ -14,31 +14,31 @@ import com.java.sagitt.DAO.LoginDAO;
 import com.java.sagitt.form.LoginForm;
 
 @Controller
-@RequestMapping("loginform.html")
+@RequestMapping("loginPage.html")
 public class LoginController {
 
 	@Autowired
 	public LoginDAO loginService;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping( method = RequestMethod.GET)
 	public String showForm(Map model) {
 		LoginForm loginForm = new LoginForm();
-		model.put("loginForm", loginForm);
-		return "loginform";
+		model.put("loginPage", loginForm);
+		return "loginPage";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String processForm(@Valid LoginForm loginForm, BindingResult result, Map model) {
 		if (result.hasErrors()) {
-			return "loginform";
+			return "loginPage";
 		}
-		boolean userExists = loginService.checkLogin(loginForm.getUsername(), loginForm.getPassword());
+		boolean userExists = loginService.checkLogin(loginForm.getUserName(), loginForm.getPassword());
 		if (userExists) {
-			model.put("loginForm", loginForm);
+			model.put("loginPage", loginForm);
 			return "loginsuccess";
 		} else {
 			result.rejectValue("userName", "invaliduser");
-			return "loginform";
+			return "loginPage";
 		}
 	}
 }

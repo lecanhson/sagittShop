@@ -26,11 +26,4 @@
             org.springframework.web.context.ContextLoaderListener
         </listener-class>
     </listener>
-  <!--   <servlet-mapping>
-        <servlet-name>sagittShop</servlet-name>
-        <url-pattern>/homePage.jsp</url-pattern>
-        <url-pattern>/index.jsp</url-pattern>
-        <url-pattern>/sagitt.html</url-pattern>
-        <url-pattern>*.html</url-pattern>
-    </servlet-mapping> -->
 </web-app>

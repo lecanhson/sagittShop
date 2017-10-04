@@ -18,7 +18,7 @@
   <li><a href="forms/validationform.html">Validation Form</a></li>
 </ul>
 <ul>
-  <li><a href="forms/loginform.html">Login Form</a></li>
+  <li><a href="forms/loginPage.html">Login Page</a></li>
 </ul>
 <ul>
   <li><a href="forms/registrationform.html">Registration Form</a></li>

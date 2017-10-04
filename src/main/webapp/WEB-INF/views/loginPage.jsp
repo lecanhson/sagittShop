@@ -10,6 +10,32 @@
 </head>
 <body>
 	<h3>Đăng nhập</h3>
-	<form action="loginform.html" commandName="loginForm"></form>
+	<form action="loginPage.html" commandName="loginPage" >
+		<table>
+		   <%--  <tr>
+		    	<td> User name : <font color="red"><form:errors path="userName"/></font>	
+		    	</td>
+		    </tr>
+		    <tr>
+		    	<td><form:input path="userName"/>/td>
+		    </tr>
+		    <tr>
+		    	<td>Password :<font color="red"><form:errors path="password"/></font>
+		    	</td>
+		    </tr>
+		    <tr>
+		          <td><form:password path="password"/>
+		          </td>
+		    </tr>
+		    <tr>
+		    		<td><form:password path="password"/>
+		    		</td>
+		    </tr>
+		    <tr>
+		     		<td><input type="submit" value="Ok"> </td>
+		    </tr> --%>
+		</table>
+	
+	</form>
 </body>
 </html>
