@@ -14,17 +14,17 @@ import com.java.sagitt.DAO.LoginDAO;
 import com.java.sagitt.form.LoginForm;
 
 @Controller
-@RequestMapping("loginPage.html")
+@RequestMapping("/account")
 public class LoginController {
 
 	@Autowired
 	public LoginDAO loginService;
 
-	@RequestMapping( method = RequestMethod.GET)
+	@RequestMapping(value="/loginPage", method = RequestMethod.GET)
 	public String showForm(Map model) {
-		LoginForm loginForm = new LoginForm();
-		model.put("loginPage", loginForm);
-		return "loginPage";
+		LoginForm loginPage = new LoginForm();
+		model.put("loginPage", loginPage);
+		return "account/loginPage";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
