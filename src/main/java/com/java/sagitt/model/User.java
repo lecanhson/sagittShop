@@ -2,6 +2,7 @@ package com.java.sagitt.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -13,14 +14,15 @@ import javax.persistence.Table;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import javax.persistence.Embeddable;
 
-
 @Entity
-@Table(name="user")
+@Table(name = "user")
 @SuppressWarnings("serial")
 public class User implements Serializable {
 
@@ -34,12 +36,20 @@ public class User implements Serializable {
 
 	@Column(name = "password")
 	private String password;
-	
-	@Column(name="email")
+
+	@Column(name = "email")
 	private String email;
 
-	@Column(name="create")
+	@Column(name = "create")
 	private Date create;
+
+	@ManyToMany
+	@JoinTable(
+			name = "user_role", 
+			joinColumns = @JoinColumn(name = "user_id"),
+			inverseJoinColumns = @JoinColumn(name = "role_id")
+			)
+	private Set<Role> roles;
 	
 	public Long getId() {
 		return id;
@@ -48,7 +58,6 @@ public class User implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 
 	public String getUser() {
 		return user;
@@ -81,7 +90,12 @@ public class User implements Serializable {
 	public void setCreate(Date create) {
 		this.create = create;
 	}
-	
-	
 
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
 }
