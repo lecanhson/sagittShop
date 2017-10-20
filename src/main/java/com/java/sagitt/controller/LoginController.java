@@ -20,25 +20,37 @@ public class LoginController {
 	@Autowired
 	public LoginDAO loginService;
 
-	@RequestMapping(value="/loginPage", method = RequestMethod.GET)
-	public String showForm(Map model) {
-		LoginForm loginPage = new LoginForm();
-		model.put("loginPage", loginPage);
-		return "account/loginPage";
+	/*
+	 * @RequestMapping(value="/loginPage", method = RequestMethod.GET) public
+	 * String showForm(Map model) { LoginForm loginPage = new LoginForm();
+	 * model.put("loginPage", loginPage); return "account/loginPage"; }
+	 * 
+	 * @RequestMapping(method = RequestMethod.POST) public String
+	 * processForm(@Valid LoginForm loginForm, BindingResult result, Map model)
+	 * { if (result.hasErrors()) { return "loginPage"; } boolean userExists =
+	 * loginService.checkLogin(loginForm.getUserName(),
+	 * loginForm.getPassword()); if (userExists) { model.put("loginPage",
+	 * loginForm); return "loginsuccess"; } else {
+	 * result.rejectValue("userName", "invaliduser"); return "loginPage"; } }
+	 */
+
+	@RequestMapping("/admin")
+	public String adminPage() {
+		return "account/admin";
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
-	public String processForm(@Valid LoginForm loginForm, BindingResult result, Map model) {
-		if (result.hasErrors()) {
-			return "loginPage";
-		}
-		boolean userExists = loginService.checkLogin(loginForm.getUserName(), loginForm.getPassword());
-		if (userExists) {
-			model.put("loginPage", loginForm);
-			return "loginsuccess";
-		} else {
-			result.rejectValue("userName", "invaliduser");
-			return "loginPage";
-		}
+	@RequestMapping("/login")
+	public String dologin() {
+		return "account/login";
+	}
+
+	@RequestMapping("/403page")
+	public String accessDenied() {
+		return "account/403page";
+	}
+
+	@RequestMapping("/")
+	public String index() {
+		return "index";
 	}
 }
