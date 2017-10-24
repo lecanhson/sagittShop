@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h3>Đăng nhập</h3>
-	<form:form action="/account/process-login" commandName="loginPage">
+	<form:form action="/account/process-login" commandName="user" method="POST">
 		<table>
 			<tr>
 				<td>User name : <font color="red"><form:errors

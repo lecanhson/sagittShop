@@ -2,15 +2,18 @@ package com.java.sagitt.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.validation.BindingResult;
 
+import com.java.core.vo.UserVO;
 import com.java.sagitt.DAO.LoginDAO;
 import com.java.sagitt.form.LoginForm;
 import com.java.sagitt.helper.ConstantManager;
@@ -30,7 +33,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/account/process-login", method = RequestMethod.POST)
-	public String processFormLogin(@Valid LoginForm loginForm, Map model) {
+	public String processFormLogin(@ModelAttribute("user") User user,HttpServletRequest request,ModelMap  model) {
 		try {
 
 			boolean userExists = loginService.checkLogin(loginForm.getUserName(), loginForm.getPassword());
