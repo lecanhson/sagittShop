@@ -10,17 +10,16 @@
 </head>
 <body>
 	<h3>Đăng nhập</h3>
-	<form:form action="/account" commandName="loginPage">
+	<form:form action="/account/login" commandName="user">
 		<table>
 			<tr>
-				<td>User name : <font color="red"><form:errors
-							path="userName" /></font></td>
+				<td>User name : <font color="red"><form:errors path="userSA" /></font></td>
 			</tr>
 			<tr>
-				<td><form:input path="userName"/>
+				<td><form:input path="userSA" />
 			</tr>
 			<tr>
-				<td>Password :<font color="red"><form:errors path="password" /></font>
+				<td>Password :<font color="red"><form:errors path="password" /></font>			
 				</td>
 			</tr>
 			<tr>

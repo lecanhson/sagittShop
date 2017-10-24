@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Built-By: CanhSon
-Build-Jdk: 1.8.0_131
+Built-By: SONY
+Build-Jdk: 1.8.0_121
 Created-By: Maven Integration for Eclipse
 
