@@ -34,7 +34,7 @@
 		</property>
 		<property name="annotatedClasses">
 			<list>
-				<value>com.java.sagitt.model.User</value> <!-- Entity classes -->
+				<value>com.java.sagitt.model.UserSA</value> <!-- Entity classes -->
 			</list>
 		</property>
 	</bean>

@@ -19,7 +19,7 @@
 		<li><a href="validationform.html">Validation Form</a></li>
 	</ul>
 	<ul>
-		<c:url var="loginPage" value="/account/loginPage.html"></c:url>
+		<c:url var="loginPage" value="/account/login"></c:url>
 		<li><a href="${loginPage }">Login Page</a></li>
 	</ul>
 	<ul>

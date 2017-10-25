@@ -10,24 +10,18 @@
 </head>
 <body>
 	<h3>Đăng nhập</h3>
-	<form:form action="/account/process-login" commandName="user" method="POST">
+	<form:form action="/account/process-login" commandName="userSA" method="POST">
 		<table>
 			<tr>
-				<td>User name : <font color="red"><form:errors
-							path="userName" /></font></td>
+				<td>Username:</td>
+				<td><form:input path="user" id="user"/> </td>
 			</tr>
 			<tr>
-				<td><form:input path="userName"/>
+				<td>Passoword:</td>
+				<td><form:password path="password" id="password"/></td>
 			</tr>
 			<tr>
-				<td>Password :<font color="red"><form:errors path="password" /></font>
-				</td>
-			</tr>
-			<tr>
-				<td><form:password path="password" /></td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="Ok"></td>
+				<td colspan="2"><input type="submit" value="Login" /></td>    
 			</tr>
 		</table>
 	</form:form>

@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.validation.BindingResult;
 
-import com.java.core.vo.UserVO;
 import com.java.sagitt.DAO.LoginDAO;
 import com.java.sagitt.form.LoginForm;
 import com.java.sagitt.helper.ConstantManager;
-import com.java.sagitt.model.User;
+import com.java.sagitt.model.UserSA;
 import com.mysql.jdbc.log.LogUtils;
 
 @Controller
@@ -28,20 +27,20 @@ public class UserController {
 
 	@RequestMapping(value = { "/account/login", "/account/process-login" }, method = RequestMethod.GET)
 	public String showFormLogin(ModelMap model) {
-		model.addAttribute("user", new User());
+		model.addAttribute("userSA", new UserSA());
 		return ConstantManager.LOGIN_PAGE;
 	}
 
 	@RequestMapping(value = "/account/process-login", method = RequestMethod.POST)
-	public String processFormLogin(@ModelAttribute("user") User user,HttpServletRequest request,ModelMap  model) {
+	public String processFormLogin(@ModelAttribute("userSA") UserSA userSA,HttpServletRequest request,ModelMap  model) {
 		try {
-
-			boolean userExists = loginService.checkLogin(loginForm.getUserName(), loginForm.getPassword());
-			if (userExists) {
-				model.put("loginPage", loginForm);
-				return "loginsuccess";
+			
+			String userName = userSA.getUser();
+			String password = userSA.getPassword();
+			
+			if(userName.equals("admin")&& password.equals("123456")){
+				return ConstantManager.LOGIN_PAGE_SUCCESS;
 			} else {
-
 				return ConstantManager.LOGIN_PAGE;
 			}
 		} catch (Exception e) {

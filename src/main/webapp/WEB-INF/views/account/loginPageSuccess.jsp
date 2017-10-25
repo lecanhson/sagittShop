@@ -10,7 +10,7 @@
 <body>
 	<h3>
 		Chào mừng bạn quay lại WebSite
-		<c:out value="${loginPage.userName}"></c:out>
+	
 	</h3>
 </body>
 </html>
