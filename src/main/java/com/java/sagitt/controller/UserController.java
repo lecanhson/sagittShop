@@ -34,7 +34,6 @@ public class UserController {
 	@RequestMapping(value = "/account/process-login", method = RequestMethod.POST)
 	public String processFormLogin(@ModelAttribute("userSA") UserSA userSA,HttpServletRequest request,ModelMap  model) {
 		try {
-			
 			String userName = userSA.getUser();
 			String password = userSA.getPassword();
 			
