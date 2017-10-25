@@ -17,7 +17,6 @@ import com.java.sagitt.helper.ConstantManager;
 import com.java.sagitt.model.UserSA;
 
 @Controller
-@RequestMapping("/registrationform.html")
 public class RegistrationController {
 	@Autowired
 	private RegistrationValidation registrationValidation;
@@ -27,14 +26,14 @@ public class RegistrationController {
 	}
 
 	// Display the form on the get request
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value={"/","/registrationform.html"}, method = RequestMethod.GET)
 	public String showRegistration(ModelMap model) {
 		model.addAttribute("userSA", new UserSA());
 		return ConstantManager.REGISTER_PAGE;
 	}
 
 	// Process the form.
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value="/registrationform.html",method = RequestMethod.POST)
 	public String processRegistration(@ModelAttribute("userSA") UserSA userSA, HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
 
