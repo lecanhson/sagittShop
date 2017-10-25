@@ -22,7 +22,7 @@ import javax.persistence.Embeddable;
 @Entity
 @Table(name="user")
 @SuppressWarnings("serial")
-public class User implements Serializable {
+public class UserSA implements Serializable {
 
 	@Id
 	@GeneratedValue
