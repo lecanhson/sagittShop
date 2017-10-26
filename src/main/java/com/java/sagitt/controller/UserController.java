@@ -10,15 +10,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.java.sagitt.DAO.LoginDAO;
 import com.java.sagitt.helper.ConstantManager;
 import com.java.sagitt.model.UserSA;
 
 @Controller
 public class UserController {
 
-	@Autowired
-	public LoginDAO loginService;
+	
 
 	@RequestMapping(value = { "/account/login", "/account/process-login" }, method = RequestMethod.GET)
 	public String showFormLogin(ModelMap model) {
