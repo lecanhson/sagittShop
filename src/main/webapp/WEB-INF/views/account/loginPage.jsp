@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h3>Đăng nhập</h3>
-	<form:form role="form" cssClass="login-form" action="process-login" commandName="userSA" method="POST">
+	<form:form role="form" cssClass="login-form" action="process-login.html" commandName="userSA" method="POST">
 		<table>
 			<tr>
 				<td>Username:</td>
