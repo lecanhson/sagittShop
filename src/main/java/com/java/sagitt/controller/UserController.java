@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.java.sagitt.enties.User;
 import com.java.sagitt.helper.ConstantManager;
 import com.java.sagitt.model.UserSA;
 
 @Controller
-public class UserController {
-
-	
+public class UserController extends AbstractController {
 
 	@RequestMapping(value = { "/account/login", "/account/process-login" }, method = RequestMethod.GET)
 	public String showFormLogin(ModelMap model) {
@@ -30,8 +29,10 @@ public class UserController {
 		try {
 			String userName = userSA.getUser();
 			String password = userSA.getPassword();
+			User user = null;
+			user = userMgr.login(userName, null, password);
 
-			if (userName.equals("admin") && password.equals("123456")) {
+			if (user != null) {
 				return ConstantManager.LOGIN_PAGE_SUCCESS;
 			} else {
 				return ConstantManager.LOGIN_PAGE;

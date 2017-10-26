@@ -8,5 +8,6 @@ public class AbstractController {
 
 	@Autowired
 	protected UserMgr userMgr;
+		
 
 }
