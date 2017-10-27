@@ -14,7 +14,7 @@
 
 		<property name="username" value="root" />
 		<property name="password" value="123456789" />
-		<!-- <property name="testWhileIdle" value="true"/> <property name="testOnBorrow" 
+		 <property name="testWhileIdle" value="true"/> <property name="testOnBorrow" 
 			value="true"/> <property name="testOnReturn" value="false"/> <property name="validationQuery" 
 			value="SELECT 1 FROM DUAL"/> <property name="validationInterval" value="30000"/> 
 			<property name="timeBetweenEvictionRunsMillis" value="30000"/> <property 
@@ -23,7 +23,7 @@
 			<property name="removeAbandonedTimeout" value="60"/> <property name="removeAbandoned" 
 			value="true"/> <property name="minEvictableIdleTimeMillis" value="30000"/> 
 			<property name="jmxEnabled" value="true"/> <property name="jdbcInterceptors" 
-			value="org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer"/> -->
+			value="org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer"/> 
 	</bean>
 
 	<bean id="sessionFactory"
