@@ -11,6 +11,10 @@ import com.java.sagitt.helper.DataAccessException;
 public class SelectRepositoryImpl extends AbstractRepository implements SelectRepository {
 
 	private SessionFactory selectSessionFactory;
+	
+	public SelectRepositoryImpl(SessionFactory selectSessionFactory) {
+		this.selectSessionFactory = selectSessionFactory;
+	}
 
 	@Override
 	public <T> T getEntityBySQL(Class<T> clazz, String sql, List<Object> params, List<Class<?>> synchronizedClass)
