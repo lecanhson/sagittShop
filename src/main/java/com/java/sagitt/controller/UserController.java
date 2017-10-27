@@ -30,16 +30,19 @@ public class UserController extends AbstractController {
 			String userName = userSA.getUser();
 			String password = userSA.getPassword();
 			User user = null;
-			user = userMgr.login(userName, null, password);
+			user = userMgr.login(userName.toLowerCase(), null, password.toLowerCase());
 
 			if (user != null) {
 				return ConstantManager.LOGIN_PAGE_SUCCESS;
+
 			} else {
+				model.put("message", "User or password not match");
 				return ConstantManager.LOGIN_PAGE;
 			}
 		} catch (Exception e) {
 
 		}
+
 		return ConstantManager.LOGIN_PAGE;
 	}
 

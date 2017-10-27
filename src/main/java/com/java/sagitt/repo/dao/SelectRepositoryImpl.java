@@ -34,8 +34,15 @@ public class SelectRepositoryImpl extends AbstractRepository implements SelectRe
 	}
 
 	@Override
+	public <T> T getEntityByHQL(String hql, List<Object> params) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public <T> T getEntityBySQL(Class<T> clazz, String sql, List<Object> params) throws DataAccessException {
 		return getEntityBySQL(clazz, sql, params, null);
 	}
+	
 
 }

@@ -11,21 +11,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.java.sagitt.helper.DataAccessException;
 
 /**
- * @author thanhtc
+ * @author canhson
  * 
  */
 public class RepositoryImpl implements IRepository {
 
+	@Autowired
+	private SelectRepository selectRepo;
+
+	@Autowired
+	private InsertRepository insertRepo;
+
+	@Override
+	public <T> T getEntityById(Class<T> clazz, Serializable id, boolean oneSession) throws DataAccessException {
+		return null;
+	}
+
 	@Override
 	public <T> T getEntityBySQL(Class<T> clazz, String sql, List<Object> params) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+		return selectRepo.getEntityBySQL(clazz, sql, params);
 	}
 
 	@Override
 	public <T> T getEntityBySQL(Class<T> clazz, String sql, List<Object> params, List<Class<?>> synchronizedClass)
 			throws DataAccessException {
-		// TODO Auto-generated method stub
+		return selectRepo.getEntityBySQL(clazz, sql, params);
+	}
+
+	@Override
+	public <T> T getEntityByHQL(String hql, List<Object> params) throws DataAccessException {
 		return null;
 	}
 

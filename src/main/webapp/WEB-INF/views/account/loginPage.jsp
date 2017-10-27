@@ -11,18 +11,21 @@
 </head>
 <body>
 	<h3>Đăng nhập</h3>
-	<form:form role="form" cssClass="login-form" action="process-login.html" commandName="userSA" method="POST">
+	${message}
+	<form:form role="form" cssClass="login-form"
+		action="process-login.html" commandName="userSA" method="POST">
 		<table>
 			<tr>
 				<td>Username:</td>
-				<td><form:input path="user" id="user"/> </td>
+				<td><form:input path="user" id="user" /></td>
 			</tr>
 			<tr>
 				<td>Passoword:</td>
-				<td><form:password path="password" id="password"/></td>
+				<td><form:password path="password" id="password" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Login" id="login" name="Login"></td>    
+				<td colspan="2"><input type="submit" value="Login" id="login"
+					name="Login"></td>
 			</tr>
 		</table>
 	</form:form>
