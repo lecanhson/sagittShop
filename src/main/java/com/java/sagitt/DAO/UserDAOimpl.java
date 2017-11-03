@@ -17,7 +17,7 @@ public class UserDAOimpl implements UserDAO {
 	@Override
 	public User login(String userName, String email, String pwd) throws DataAccessException {
 		List<Object> params = new ArrayList<Object>();
-		String sql = "select *from USER where USER_NAME = ? and PASSWORD = ? ";
+		String sql = "select * from user where user_name = ? and password = ? ";
 		/*params.add(StringUtility.isNullOrEmpty(email) ? userName : email);*/
 		params.add(userName);
 		params.add(pwd);
