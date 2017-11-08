@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sagittShop:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SagittB.war">
+      <element id="artifact" artifact-name="sagittShop:war exploded" />
+    </root>
+  </artifact>
+</component>
