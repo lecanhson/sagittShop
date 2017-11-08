@@ -23,10 +23,10 @@ public class SelectRepositoryImpl extends AbstractRepository implements SelectRe
 			Session session = selectSessionFactory.getCurrentSession();
 			SQLQuery query = session.createSQLQuery(sql);
 			addParameters(query, params);
-			//addSynchronizedClass(query, synchronizedClass);
+			addSynchronizedClass(query, synchronizedClass);
 			query.setCacheable(true);
 			query.addEntity(clazz);
-			query.setMaxResults(1);
+			query.setMaxResults(10);
 			return clazz.cast(query.uniqueResult());
 		} catch (Exception e) {
 			throw new DataAccessException(e);

@@ -323,7 +323,6 @@
 
 	<build>
 		<finalName>SagittB</finalName>
-
 		<plugins>
 			<!-- Eclipse project -->
 			<plugin>
@@ -372,6 +371,7 @@
 					</archive>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>
