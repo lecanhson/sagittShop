@@ -43,5 +43,5 @@ Class-Path: jersey-client-2.22.1.jar javax.ws.rs-api-2.0.1.jar jersey-
  2.jar httpcore-4.4.4.jar commons-codec-1.9.jar freemarker-2.3.23.jar 
  jcaptcha-all-1.0-RC6.jar
 Created-By: IntelliJ IDEA
-Build-Jdk: 1.8.0_131
+Build-Jdk: 1.8.0_151
 

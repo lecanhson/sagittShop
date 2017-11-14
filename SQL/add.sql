@@ -1,1 +1,0 @@
-`sagitt_shop``attribute`
