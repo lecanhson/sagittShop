@@ -34,10 +34,23 @@ public class User implements Serializable {
 	
 	@Column(name="TELL")
 	private String tell;
-	
+
 	@Column(name="EMAIL")
 	private String email;
-	
+
+	@Column(name="STARTUS")
+	private Long status;
+
+
+	@Column(name="SEX")
+	private Long sex;
+
+	@Column(name="PHOTO")
+	private String photo;
+
+	@Column(name="COMMENT")
+	private String comment;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATE_DATE")
 	private Date createDate;
@@ -97,10 +110,36 @@ public class User implements Serializable {
 	public void setTell(String tell) {
 		this.tell = tell;
 	}
-	
-	
-	
-	
-	
 
+	public Long getStatus() {
+		return status;
+	}
+
+	public void setStatus(Long status) {
+		this.status = status;
+	}
+
+	public Long getSex() {
+		return sex;
+	}
+
+	public void setSex(Long sex) {
+		this.sex = sex;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
 }

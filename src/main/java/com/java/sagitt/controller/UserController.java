@@ -17,39 +17,39 @@ import com.java.sagitt.model.UserSA;
 @Controller
 public class UserController extends AbstractController {
 
-	@RequestMapping(value = { "/account/login", "/account/process-login" }, method = RequestMethod.GET)
-	public String showFormLogin(ModelMap model) {
-		model.addAttribute("userSA", new UserSA());
-		return ConstantManager.LOGIN_PAGE;
-	}
+    @RequestMapping(value = {"/account/login", "/account/process-login"}, method = RequestMethod.GET)
+    public String showFormLogin(ModelMap model) {
+        model.addAttribute("userSA", new UserSA());
+        return ConstantManager.LOGIN_PAGE;
+    }
 
-	@RequestMapping(value = "/account/process-login", method = RequestMethod.POST)
-	public String processFormLogin(@ModelAttribute("userSA") UserSA userSA, HttpServletRequest request,
-			HttpServletResponse response, ModelMap model) {
-		try {
-			String userName = userSA.getUser();
-			String password = userSA.getPassword();
-			User user = null;
-			user = userMgr.login(userName.toLowerCase(), null, password.toLowerCase());
+    @RequestMapping(value = "/account/process-login", method = RequestMethod.POST)
+    public String processFormLogin(@ModelAttribute("userSA") UserSA userSA, HttpServletRequest request,
+                                   HttpServletResponse response, ModelMap model) {
+        try {
+            String userName = userSA.getUser();
+            String password = userSA.getPassword();
+            User user = null;
+            user = userMgr.login(userName.toLowerCase(), null, password.toLowerCase());
 
-			if (user != null) {
-				return ConstantManager.LOGIN_PAGE_SUCCESS;
+            if (user != null) {
+                return ConstantManager.LOGIN_PAGE_SUCCESS;
 
-			} else {
-				model.put("message", "User or password not match");
-				return ConstantManager.LOGIN_PAGE;
-			}
-		} catch (Exception e) {
+            } else {
+                model.put("message", "User or password not match");
+                return ConstantManager.LOGIN_PAGE;
+            }
+        } catch (Exception e) {
 
-		}
+        }
+        model.put("message", "Erorrs out ");
+        return ConstantManager.LOGIN_PAGE;
+    }
 
-		return ConstantManager.LOGIN_PAGE;
-	}
-
-	@RequestMapping(value = { "/account/register", "/account/process-reg" }, method = RequestMethod.GET)
-	public String showFormRegister(ModelMap model) {
-		model.addAttribute("userSA", new UserSA());
-		return ConstantManager.REGISTER_PAGE;
-	}
+    @RequestMapping(value = {"/account/register", "/account/process-reg"}, method = RequestMethod.GET)
+    public String showFormRegister(ModelMap model) {
+        model.addAttribute("userSA", new UserSA());
+        return ConstantManager.REGISTER_PAGE;
+    }
 
 }
