@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h3>Đăng nhập</h3>
-	${message}
+	${errMsgs}
 	<form:form role="form" cssClass="login-form"
 		action="process-login.html" commandName="userSA" method="POST">
 		<table>
